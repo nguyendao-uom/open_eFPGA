@@ -1,3 +1,20 @@
+// SPDX-FileCopyrightText: 
+// 2022 Nguyen Dao
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+// SPDX-License-Identifier: Apache-2.0
+
 module W_IO (E1BEG, E2BEG, E2BEGb, EE4BEG, E6BEG, W1END, W2MID, W2END, WW4END, W6END, A_I_top, A_T_top, A_O_top, UserCLK, B_I_top, B_T_top, B_O_top, A_config_C_bit0, A_config_C_bit1, A_config_C_bit2, A_config_C_bit3, B_config_C_bit0, B_config_C_bit1, B_config_C_bit2, B_config_C_bit3, UserCLKo, FrameData, FrameData_O, FrameStrobe, FrameStrobe_O);
 	parameter MaxFramesPerCol = 20;
 	parameter FrameBitsPerRow = 32;

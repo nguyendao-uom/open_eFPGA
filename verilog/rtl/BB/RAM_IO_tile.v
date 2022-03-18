@@ -1,3 +1,20 @@
+// SPDX-FileCopyrightText: 
+// 2022 Nguyen Dao
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+// SPDX-License-Identifier: Apache-2.0
+
 module RAM_IO (N1BEG, N2BEG, N2BEGb, N4BEG, N1END, N2MID, N2END, N4END, E1END, E2MID, E2END, EE4END, E6END, S1BEG, S2BEG, S2BEGb, S4BEG, S1END, S2MID, S2END, S4END, W1BEG, W2BEG, W2BEGb, WW4BEG, W6BEG, RAM2FAB_D0_I0, RAM2FAB_D0_I1, RAM2FAB_D0_I2, RAM2FAB_D0_I3, UserCLK, RAM2FAB_D1_I0, RAM2FAB_D1_I1, RAM2FAB_D1_I2, RAM2FAB_D1_I3, RAM2FAB_D2_I0, RAM2FAB_D2_I1, RAM2FAB_D2_I2, RAM2FAB_D2_I3, RAM2FAB_D3_I0, RAM2FAB_D3_I1, RAM2FAB_D3_I2, RAM2FAB_D3_I3, FAB2RAM_D0_O0, FAB2RAM_D0_O1, FAB2RAM_D0_O2, FAB2RAM_D0_O3, FAB2RAM_D1_O0, FAB2RAM_D1_O1, FAB2RAM_D1_O2, FAB2RAM_D1_O3, FAB2RAM_D2_O0, FAB2RAM_D2_O1, FAB2RAM_D2_O2, FAB2RAM_D2_O3, FAB2RAM_D3_O0, FAB2RAM_D3_O1, FAB2RAM_D3_O2, FAB2RAM_D3_O3, FAB2RAM_A0_O0, FAB2RAM_A0_O1, FAB2RAM_A0_O2, FAB2RAM_A0_O3, FAB2RAM_A1_O0, FAB2RAM_A1_O1, FAB2RAM_A1_O2, FAB2RAM_A1_O3, FAB2RAM_C_O0, FAB2RAM_C_O1, FAB2RAM_C_O2, FAB2RAM_C_O3, Config_accessC_bit0, Config_accessC_bit1, Config_accessC_bit2, Config_accessC_bit3, UserCLKo, FrameData, FrameData_O, FrameStrobe, FrameStrobe_O);
 	parameter MaxFramesPerCol = 20;
 	parameter FrameBitsPerRow = 32;

@@ -16,8 +16,6 @@
 set script_dir [file dirname [file normalize [info script]]]
 source $::env(CARAVEL_ROOT)/openlane/user_project_wrapper/fixed_wrapper_cfgs.tcl
 source $::env(CARAVEL_ROOT)/openlane/user_project_wrapper/default_wrapper_cfgs.tcl
-#source $script_dir/fixed_wrapper_cfgs.tcl
-#source $script_dir/default_wrapper_cfgs.tcl
 
 set ::env(DESIGN_NAME) user_project_wrapper
 
@@ -83,52 +81,19 @@ set ::env(FP_PDN_VPITCH) 2800
 
 set ::env(SYNTH_READ_BLACKBOX_LIB) 1
 set ::env(VERILOG_FILES) [glob $script_dir/../../verilog/rtl/defines.v $script_dir/../../../verilog/rtl/*.v ]
-#set ::env(VERILOG_FILES) "\
-#	$script_dir/../../verilog/rtl/defines.v \
-#	$script_dir/../../verilog/rtl/user_project_wrapper.v"
 
 ## Internal Macros
-
 ### Macro Placement
 set ::env(MACRO_PLACEMENT_CFG) "$script_dir/../../../openlane/user_project_wrapper/macros/placements/macro_placement.cfg"
 
 ### Black-box verilog and views
 set ::env(VERILOG_FILES_BLACKBOX) [glob $script_dir/../../../verilog/rtl/BB/*.v]
 
-#set ::env(VERILOG_FILES_BLACKBOX) "\
-#	$script_dir/../../verilog/rtl/defines.v \
-#	$script_dir/../../verilog/rtl/eFPGA_top.v"
-
 set ::env(EXTRA_LEFS) [glob $script_dir/../../../openlane/user_project_wrapper/macros/lef/*.lef]
-#set ::env(EXTRA_LEFS) "\
-#			$script_dir/../../../openlane/user_project_wrapper/macros/lef/BRAM.lef \
-#			$script_dir/../../../openlane/user_project_wrapper/macros/lef/cus_tg_mux41_buf.lef \
-#			$script_dir/../../../openlane/user_project_wrapper/macros/lef/DSP.lef \
-#			$script_dir/../../../openlane/user_project_wrapper/macros/lef/E_CPU_IO_bot.lef \
-#			$script_dir/../../../openlane/user_project_wrapper/macros/lef/E_CPU_IO.lef \
-#			$script_dir/../../../openlane/user_project_wrapper/macros/lef/flexbex_ibex_core.lef \
-#			$script_dir/../../../openlane/user_project_wrapper/macros/lef/ibex_core.lef \
-#			$script_dir/../../../openlane/user_project_wrapper/macros/lef/ibex_top.lef \
-#			$script_dir/../../../openlane/user_project_wrapper/macros/lef/LUT4AB.lef \
-#			$script_dir/../../../openlane/user_project_wrapper/macros/lef/N_term_DSP.lef \
-#			$script_dir/../../../openlane/user_project_wrapper/macros/lef/N_term_RAM_IO.lef \
-#			$script_dir/../../../openlane/user_project_wrapper/macros/lef/N_term_single2.lef \
-#			$script_dir/../../../openlane/user_project_wrapper/macros/lef/N_term_single.lef \
-#			$script_dir/../../../openlane/user_project_wrapper/macros/lef/RAM_IO.lef \
-#			$script_dir/../../../openlane/user_project_wrapper/macros/lef/RegFile.lef \
-#			$script_dir/../../../openlane/user_project_wrapper/macros/lef/S_term_DSP.lef \
-#			$script_dir/../../../openlane/user_project_wrapper/macros/lef/S_term_RAM_IO.lef \
-#			$script_dir/../../../openlane/user_project_wrapper/macros/lef/S_term_single2.lef \
-#			$script_dir/../../../openlane/user_project_wrapper/macros/lef/S_term_single.lef \
-#			$script_dir/../../../openlane/user_project_wrapper/macros/lef/W_CPU_IO_bot.lef \
-#			$script_dir/../../../openlane/user_project_wrapper/macros/lef/W_CPU_IO.lef \
-#			$script_dir/../../../openlane/user_project_wrapper/macros/lef/W_IO.lef "
 
 set ::env(EXTRA_GDS_FILES) [glob $script_dir/../../../openlane/user_project_wrapper/macros/gds/*.gds]
 
 ### Macro PDN Connections
-#set ::env(FP_PDN_MACRO_HOOKS) "\
-#	inst_eFPGA_top vccd1 vssd1"
 set ::env(FP_PDN_MACRO_HOOKS) "\
         inst_eFPGA_top.Inst_eFPGA.Tile_X0Y1_W_IO vccd1 vssd1 \
         inst_eFPGA_top.Inst_eFPGA.Tile_X0Y2_W_IO vccd1 vssd1 \
@@ -269,29 +234,3 @@ set ::env(FP_PDN_MACRO_HOOKS) "\
         inst_eFPGA_top.Inst_BlockRAM_1 vccd1 vssd1 \
         inst_eFPGA_top.Inst_BlockRAM_0 vccd1 vssd1 "
 
-
-
-## The following is because there are no std cells in the example wrapper project.
-
-#set ::env(SYNTH_TOP_LEVEL) 1
-#set ::env(PL_RANDOM_GLB_PLACEMENT) 1
-#
-#set ::env(PL_RESIZER_DESIGN_OPTIMIZATIONS) 0
-#set ::env(PL_RESIZER_TIMING_OPTIMIZATIONS) 0
-#set ::env(PL_RESIZER_BUFFER_INPUT_PORTS) 0
-#set ::env(PL_RESIZER_BUFFER_OUTPUT_PORTS) 0
-#
-#set ::env(FP_PDN_ENABLE_RAILS) 0
-#
-##set ::env(DIODE_INSERTION_STRATEGY) 0
-#set ::env(FILL_INSERTION) 0
-#set ::env(TAP_DECAP_INSERTION) 0
-#set ::env(CLOCK_TREE_SYNTH) 0
-#
-#set ::env(MAGIC_DRC_USE_GDS) 0
-#set ::env(ROUTING_CORES) 12
-#set ::env(SYNTH_USE_PG_PINS_DEFINES) "USE_POWER_PINS"
-#set ::env(VDD_PIN) "vccd1"
-#set ::env(GND_PIN) "vssd1"
-#set ::env(FP_PDN_ENABLE_MACROS_GRID) 0
-#
